@@ -1,0 +1,147 @@
+.kitchenSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background: radial-gradient(circle, #1a1a1a, #0d0d0d);
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+  gap: 1rem;
+  position: relative; /* Necesario para los pseudo-elementos */
+}
+
+/* Pseudo-elementos para el difuminado superior e inferior */
+.kitchenSection::before,
+.kitchenSection::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px; /* Aumentamos el difuminado */
+  z-index: 2; /* Encima del carrusel */
+  pointer-events: none;
+}
+
+.kitchenSection::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.kitchenSection::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.carouselContainer {
+  width: 95%;
+  max-width: 1600px; /* Carrusel más ancho */
+  position: relative;
+  z-index: 1;
+  padding: 10px; /* Añadir espacio al contenedor */
+}
+
+/* Añadir padding a los slides */
+.slick-slide {
+  padding: 0 10px; /* Espacio entre imágenes */
+}
+
+/* Eliminar el padding del primer y último slide */
+.slick-slide:first-child {
+  padding-left: 0;
+}
+
+.slick-slide:last-child {
+  padding-right: 0;
+}
+
+/* Contenedor de la imagen para mantener tamaño uniforme */
+.imageWrapper {
+  width: calc(100% - 20px); /* Restar el padding */
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Efecto en imágenes */
+.kitchenImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.1);
+}
+
+/* Descripción */
+.description {
+  text-align: center;
+  margin-top: 30px;
+  max-width: 600px;
+}
+
+.description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 10%; /* Lo subimos un poco más */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* Un poco más oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Mayor que cualquier otro elemento */
+}
+
+/* Contenedor del modal más grande y centrado */
+.modalContent {
+  position: relative;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.3);
+  max-width: 650px; /* Más grande */
+  max-height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen dentro del modal */
+.modalImage {
+  border-radius: 10px;
+  width: 100%; /* Ajuste al modal */
+  height: auto;
+}
+
+/* Botón de cierre */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.closeButton:hover {
+  color: red;
+}
