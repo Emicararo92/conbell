@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dynamic from "next/dynamic";
 import styles from "../../Styles/init.module.css";
+import logo from "../../../public/logow.png";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
@@ -49,12 +50,7 @@ function Init() {
 
       {/* Logo en el centro */}
       <div className={styles.logo}>
-        <Image
-          src="https://res.cloudinary.com/diefdex1h/image/upload/v1741374909/logo_conbell_white2_1_dih27k.png"
-          alt="Logo Conbell"
-          width={250}
-          height={250}
-        />
+        <Image src={logo} alt="Logo Conbell" width={400} height={400} />
       </div>
     </div>
   );

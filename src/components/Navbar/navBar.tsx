@@ -1,37 +1,31 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import styles from "../../Styles/navbar.module.css";
-import logo from "../../../public/logo.png";
+import logoBlack from "../../../public/logob.png"; // Logo normal (negro)
+import logoWhite from "../../../public/logow.png"; // Logo en hover (blanco)
 
 function NavBar() {
+  const [logoSrc, setLogoSrc] = useState(logoBlack);
+
   return (
-    <nav className={styles.navbar}>
+    <nav
+      className={styles.navbar}
+      onMouseEnter={() => setLogoSrc(logoWhite)}
+      onMouseLeave={() => setLogoSrc(logoBlack)}
+    >
       <div className={styles.navContainer}>
-        <a href={"/"} className={styles.logo}>
-          <Image
-            className="bg-black p-1 rounded-b-sm"
-            src={logo}
-            alt="logo"
-            width={80}
-            height={80}
-          />
+        <a href="#inicio" className={styles.logo}>
+          <Image src={logoSrc} alt="Logo" width={80} height={80} priority />
         </a>
 
         <div className={styles.menu}>
           {/* Dropdown: Showrooms */}
           <div className={styles.menuItem}>
-            <a href="#showrooms" className={styles.menuButton}>
+            <a href="/Kitchen" className={styles.menuButton}>
               Showrooms
             </a>
-            <div className={styles.dropdown}>
-              <a href="#cocinas" className={styles.dropdownItem}>
-                Cocinas
-              </a>
-              <a href="#placards" className={styles.dropdownItem}>
-                Placards
-              </a>
-            </div>
           </div>
 
           {/* Dropdown: Nosotros */}

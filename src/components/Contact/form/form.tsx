@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../../../Styles/form.module.css";
-import logo from "../../../../public/logo.png";
+import logo from "../../../../public/logow.png";
 
 function Form() {
   return (

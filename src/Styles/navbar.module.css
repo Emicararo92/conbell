@@ -7,8 +7,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 10px;
   z-index: 1000;
+}
+
+.logo img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Cambia la imagen cuando la navbar está en hover */
+.navbar:hover .logo img {
+  content: url("../../public/logow.png"); /* Cambia la imagen del logo */
 }
 
 .navContainer {
