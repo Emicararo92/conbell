@@ -1,0 +1,42 @@
+.callButton {
+  background-color: white;
+  border-radius: 2rem;
+  color: black;
+  padding: 1rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.callButton:hover {
+  background-color: black;
+  color: white;
+  border: solid 0.5px whitesmoke;
+  transition: all 0.5s;
+}
+
+.phoneIcon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.callContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* TODO */
+
+.moreButtonContainer {
+  background-color: black;
+  border: solid 0.5px whitesmoke;
+  border-radius: 0.5rem;
+  
+}
